@@ -19,6 +19,7 @@ public class CharacterController : MonoBehaviour
     private float yaw = 0.0f;
     private float pitch = 0.0f;
 
+    public Camera camera;
 
     // Use this for initialization
     void Start()
@@ -41,7 +42,8 @@ public class CharacterController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         // Calculate the movement vector
-        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
+        Vector3 movement = verticalInput * this.transform.forward + horizontalInput * this.transform.right;
+        movement = movement.normalized;
 
         // Move the character in the direction of the input
         rb.MovePosition(this.transform.position + movement * moveSpeed * Time.deltaTime);

@@ -561,3 +561,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  mouseSensitivity: 2
+  pitchMinMax: {x: -40, y: 85}
+  camera: {fileID: 1617869658}
