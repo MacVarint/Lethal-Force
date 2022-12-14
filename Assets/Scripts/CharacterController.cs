@@ -18,7 +18,11 @@ public class CharacterController : MonoBehaviour
     // The current rotation of the player
     private float yaw = 0.0f;
     private float pitch = 0.0f;
+    public float horizontalInput;
+    public float verticalInput;
+    float mouseX;
 
+    public Camera camera;
 
     // Use this for initialization
     void Start()
@@ -31,35 +35,40 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Inputs();
+        Rotation();
+    }
+
+    private void FixedUpdate()
+    {
         Movement();
-        Mouse();
+    }
+    private void Inputs()
+    {
+        // Get the horizontal and vertical input axes
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+        // Get the mouse delta
+        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
     }
     public void Movement()
     {
-        // Get the horizontal and vertical input axes
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
         // Calculate the movement vector
-        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
+        Vector3 movement = verticalInput * this.transform.forward + horizontalInput * this.transform.right;
+        movement = movement.normalized;
 
         // Move the character in the direction of the input
         rb.MovePosition(this.transform.position + movement * moveSpeed * Time.deltaTime);
     }
-    public void Mouse()
+    public void Rotation()
     {
-        // Get the mouse delta
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-
         // Update the player's yaw (left/right rotation) and pitch (up/down rotation)
         yaw += mouseX;
-        pitch -= mouseY;
 
         // Clamp the pitch within the min/max range
         pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
 
         // Rotate the player
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+        transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
     }
 }
