@@ -12,17 +12,11 @@ public class CharacterController : MonoBehaviour
     // The sensitivity of the mouse
     public float mouseSensitivity = 2.0f;
 
-    // The minimum and maximum angles that the player can look up and down
-    public Vector2 pitchMinMax = new Vector2(-40, 85);
-
     // The current rotation of the player
     private float yaw = 0.0f;
-    private float pitch = 0.0f;
     public float horizontalInput;
     public float verticalInput;
     float mouseX;
-
-    public Camera camera;
 
     // Use this for initialization
     void Start()
@@ -64,9 +58,6 @@ public class CharacterController : MonoBehaviour
     {
         // Update the player's yaw (left/right rotation) and pitch (up/down rotation)
         yaw += mouseX;
-
-        // Clamp the pitch within the min/max range
-        pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
 
         // Rotate the player
         transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
