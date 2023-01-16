@@ -1324,6 +1324,7 @@ Transform:
   - {fileID: 284819216}
   - {fileID: 384616976}
   - {fileID: 2049144684}
+  - {fileID: 1225964663}
   m_Father: {fileID: 1521183264}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1341,8 +1342,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxdictance: 100
   gunRaycastSnapPoint: {fileID: 2049144684}
+  chamberExit: {fileID: 1225964663}
   hitObject: {fileID: 6123251598955395678, guid: a739d405b2bd7634cad2fff8bbc6c9ba, type: 3}
-  hitObject2: {fileID: 9101433293475826173, guid: 616400b9a6864ab4a9d7a4667d8203eb, type: 3}
+  bulletPrefab: {fileID: 9101433293475826173, guid: 616400b9a6864ab4a9d7a4667d8203eb, type: 3}
+  bulletCasing: {fileID: 8382853905450360237, guid: 9985a657fd2ce3d4fa357b58c36501b3, type: 3}
 --- !u!1 &767939560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,6 +1666,37 @@ Transform:
   m_Father: {fileID: 2010361011}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1225964662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225964663}
+  m_Layer: 0
+  m_Name: ChamberExit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1225964663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225964662}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.0256, y: 0.0987, z: 0.0252}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 719811071}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1260222913
 GameObject:
   m_ObjectHideFlags: 0

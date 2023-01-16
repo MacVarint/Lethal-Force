@@ -6,10 +6,12 @@ public class ShootScript : MonoBehaviour
 {
     [SerializeField] float maxdictance = 100;
     public Transform gunRaycastSnapPoint;
+    public Transform chamberExit;
     RaycastHit hit;
     RaycastHit hitGun;
     public GameObject hitObject;
-    public GameObject hitObject2;
+    public GameObject bulletPrefab;
+    public GameObject bulletCasing;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +28,12 @@ public class ShootScript : MonoBehaviour
     // Update is called once per frame
     public void Shoot()
     {
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxdictance)) {
+        GameObject bullet = Instantiate(bulletPrefab, gunRaycastSnapPoint.position, Quaternion.identity);
+        bullet.transform.rotation = gunRaycastSnapPoint.rotation;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxdictance)) {
             Instantiate(hitObject, hit.point, Quaternion.identity);
+            bullet.transform.LookAt(hit.point);
         }
-        if (Physics.Raycast(gunRaycastSnapPoint.position, gunRaycastSnapPoint.forward, out hitGun, maxdictance))
-        {
-            Instantiate(hitObject2, hitGun.point, Quaternion.identity);
-        }
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100;
     }
-
 }
