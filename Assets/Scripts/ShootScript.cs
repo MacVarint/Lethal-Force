@@ -11,7 +11,7 @@ public class ShootScript : MonoBehaviour
     RaycastHit hitGun;
     public GameObject hitObject;
     public GameObject bulletPrefab;
-    public GameObject bulletCasing;
+    public GameObject bulletCasingPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +29,14 @@ public class ShootScript : MonoBehaviour
     public void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, gunRaycastSnapPoint.position, Quaternion.identity);
+        GameObject bulletCasing = Instantiate(bulletCasingPrefab, chamberExit.position, chamberExit.rotation);
         bullet.transform.rotation = gunRaycastSnapPoint.rotation;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxdictance)) {
             Instantiate(hitObject, hit.point, Quaternion.identity);
             bullet.transform.LookAt(hit.point);
         }
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100;
+        
+        bulletCasing.GetComponent<Rigidbody>().velocity = bulletCasing.transform.right * 1f+Vector3.up;
     }
 }
