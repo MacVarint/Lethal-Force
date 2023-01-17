@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ShootScript : MonoBehaviour
 {
+    public Animator animator;
     [SerializeField] float maxdictance = 100;
     public Transform gunRaycastSnapPoint;
     public Transform chamberExit;
     RaycastHit hit;
     RaycastHit hitGun;
-    public GameObject hitObject;
     public GameObject bulletPrefab;
     public GameObject bulletCasingPrefab;
     // Start is called before the first frame update
@@ -21,19 +21,27 @@ public class ShootScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Recoil"))
+            {
+                Shoot();
+            }
         }
     }
     
     // Update is called once per frame
     public void Shoot()
     {
+        animator.SetTrigger("Shoot");
         GameObject bullet = Instantiate(bulletPrefab, gunRaycastSnapPoint.position, Quaternion.identity);
-        GameObject bulletCasing = Instantiate(bulletCasingPrefab, chamberExit.position, chamberExit.rotation);
+        GameObject bulletCasing = Instantiate(bulletCasingPrefab, chamberExit.position, chamberExit.rotation, transform);
         bullet.transform.rotation = gunRaycastSnapPoint.rotation;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxdictance)) {
-            Instantiate(hitObject, hit.point, Quaternion.identity);
             bullet.transform.LookAt(hit.point);
+        }
+        else
+        {
+            Vector3 target = Camera.main.transform.position + Camera.main.transform.forward * maxdictance;
+            bullet.transform.LookAt(target);
         }
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100;
         
