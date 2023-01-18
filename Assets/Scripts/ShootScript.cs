@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootScript : MonoBehaviour
 {
     public Animator animator;
+    public Animator pistolAnimator;
     [SerializeField] float maxdictance = 100;
     public Transform gunRaycastSnapPoint;
     public Transform chamberExit;
@@ -32,6 +33,7 @@ public class ShootScript : MonoBehaviour
     public void Shoot()
     {
         animator.SetTrigger("Shoot");
+        pistolAnimator.SetTrigger("Shoot");
         GameObject bullet = Instantiate(bulletPrefab, gunRaycastSnapPoint.position, Quaternion.identity);
         GameObject bulletCasing = Instantiate(bulletCasingPrefab, chamberExit.position, chamberExit.rotation, transform);
         bullet.transform.rotation = gunRaycastSnapPoint.rotation;
@@ -46,5 +48,6 @@ public class ShootScript : MonoBehaviour
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100;
         
         bulletCasing.GetComponent<Rigidbody>().velocity = bulletCasing.transform.right * 1f+Vector3.up;
+        
     }
 }

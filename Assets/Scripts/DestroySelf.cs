@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroySelf : MonoBehaviour
 {
-    float time = 1;
+    public float time = 1;
     private void Start()
     {
         DestroyAfter(time);
