@@ -6,6 +6,7 @@ public class ShootScript : MonoBehaviour
 {
     public Animator animator;
     public Animator pistolAnimator;
+    AmmoScript ammoScript;
     public ParticleSystem particleSystem1;
     [SerializeField] float maxdictance = 100;
     public Transform gunRaycastSnapPoint;
@@ -17,13 +18,14 @@ public class ShootScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ammoScript = GetComponent<AmmoScript>();
     }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Recoil"))
+           
+            if (ammoScript.HasAmmo() && !animator.GetCurrentAnimatorStateInfo(0).IsName("Recoil"))
             {
                 Shoot();
             }
@@ -52,7 +54,8 @@ public class ShootScript : MonoBehaviour
             bullet.transform.LookAt(target);
         }
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100;
-        
+        ammoScript.DecreaseAmmo();
+
         bulletCasing.GetComponent<Rigidbody>().velocity = bulletCasing.transform.right * 1f+Vector3.up;
         
     }
