@@ -768,14 +768,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1612251823}
     m_Modifications:
+    - target: {fileID: 3532897917642305567, guid: 878d94a0b3535254f84273ef79879bf7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4727654778945939656, guid: 878d94a0b3535254f84273ef79879bf7, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 373290837}
-    - target: {fileID: 4727654778945939656, guid: 878d94a0b3535254f84273ef79879bf7, type: 3}
-      propertyPath: pistolAnimator
-      value: 
-      objectReference: {fileID: 1480833306}
     - target: {fileID: 4727654778945939658, guid: 878d94a0b3535254f84273ef79879bf7, type: 3}
       propertyPath: m_Name
       value: Pistol
@@ -822,6 +822,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4727654778945939659, guid: 878d94a0b3535254f84273ef79879bf7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8142949775441853665, guid: 878d94a0b3535254f84273ef79879bf7, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1166,7 +1170,7 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 3380f646d19cabd479487ff3ea8d1350, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
+  m_TreeBillboardDistance: 500
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 250
@@ -1450,11 +1454,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387569255}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &1480833306 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8446961249968552717, guid: 878d94a0b3535254f84273ef79879bf7, type: 3}
-  m_PrefabInstance: {fileID: 513479484}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1612251823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5339777026536068023, guid: a0bff8d66b9e6e2498359e7ce4a57cf8, type: 3}
@@ -1859,7 +1858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5339777028312770126, guid: a0bff8d66b9e6e2498359e7ce4a57cf8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5409851
+      value: 0.426
       objectReference: {fileID: 0}
     - target: {fileID: 5339777028312770126, guid: a0bff8d66b9e6e2498359e7ce4a57cf8, type: 3}
       propertyPath: m_LocalPosition.y

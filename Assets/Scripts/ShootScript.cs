@@ -6,6 +6,7 @@ public class ShootScript : MonoBehaviour
 {
     public Animator animator;
     public Animator pistolAnimator;
+    public ParticleSystem particleSystem1;
     [SerializeField] float maxdictance = 100;
     public Transform gunRaycastSnapPoint;
     public Transform chamberExit;
@@ -34,6 +35,11 @@ public class ShootScript : MonoBehaviour
     {
         animator.SetTrigger("Shoot");
         pistolAnimator.SetTrigger("Shoot");
+
+        particleSystem1.Play();
+        ParticleSystem.EmissionModule em = particleSystem1.emission;
+        em.enabled = true;
+
         GameObject bullet = Instantiate(bulletPrefab, gunRaycastSnapPoint.position, Quaternion.identity);
         GameObject bulletCasing = Instantiate(bulletCasingPrefab, chamberExit.position, chamberExit.rotation, transform);
         bullet.transform.rotation = gunRaycastSnapPoint.rotation;
