@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7710455905512155984}
   - component: {fileID: 5541113654328270746}
   - component: {fileID: 6567488657772446489}
+  - component: {fileID: -8702776254597355255}
   m_Layer: 0
   m_Name: Palm_Tree02
   m_TagString: Untagged
@@ -95,8 +96,22 @@ MeshCollider:
   m_GameObject: {fileID: 6333470592089603663}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5950218633374952380, guid: c25acc87f5158534c991a9354294c303, type: 3}
+--- !u!136 &-8702776254597355255
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6333470592089603663}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.66
+  m_Height: 12.641256
+  m_Direction: 1
+  m_Center: {x: 0.2, y: 6.2450247, z: 0.41}
