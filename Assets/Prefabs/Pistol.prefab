@@ -50,7 +50,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 0
   startDelay:
@@ -5515,6 +5515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8326fb6be0c734a47a2c3a617a700743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalAmmo: 56
+  currentAmmo: 7
+  magazineSize: 7
+  maxAmmo: 112
 --- !u!1 &4727654779021957020
 GameObject:
   m_ObjectHideFlags: 0

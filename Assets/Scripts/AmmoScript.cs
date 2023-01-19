@@ -8,6 +8,9 @@ public class AmmoScript : MonoBehaviour
     public int currentAmmo;
     public int magazineSize;
     public int maxAmmo;
+    public Transform colliderPosition;
+    public Vector3 thisCollider;
+    public LayerMask isPickuppable;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,12 @@ public class AmmoScript : MonoBehaviour
         {
             Reload();
         }
+        Collider[] collisions = Physics.OverlapBox(colliderPosition.position, thisCollider, Quaternion.identity, isPickuppable);
+        foreach(Collider c in collisions)
+        {
+            print(c.gameObject.name);
+        }
+        
     }
     public bool HasAmmo()
     {
@@ -59,5 +68,17 @@ public class AmmoScript : MonoBehaviour
         {
             print(0);
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Ammo-Box 45-ACP FMJ")
+        {
+            totalAmmo += maxAmmo;
+            totalAmmo = Mathf.Clamp(totalAmmo, 0, maxAmmo);
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawCube(colliderPosition.position, thisCollider);
     }
 }
