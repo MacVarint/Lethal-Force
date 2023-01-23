@@ -31,14 +31,8 @@ public class AmmoScript : MonoBehaviour
     }
     public bool HasAmmo()
     {
-        //if (currentAmmo > 0)
-        //{
-        //    return true;
-        //}
-        //return false;
-        
-        bool a = currentAmmo > 0 ? true : false; // conditie ? waarde als waar : waarde als niet waar (dit heet een itenary operator)
-        return a;
+        bool hasAmmo = currentAmmo > 0; // if current ammo is higher than 0 this will result in a "true" statement.
+        return hasAmmo;
     }
     public void DecreaseAmmo()
     {
@@ -65,18 +59,18 @@ public class AmmoScript : MonoBehaviour
             totalAmmo = 0;
         }
         else
-        {
+        {   
             print(0);
         }
     }
-    private void OnTriggerEnter(Collider other)
+
+    public void AddAmmo(int newAmmo)
     {
-        if (other.name == "Ammo-Box 45-ACP FMJ")
-        {
-            totalAmmo += maxAmmo;
-            totalAmmo = Mathf.Clamp(totalAmmo, 0, maxAmmo);
-        }
+        totalAmmo += newAmmo;
+        totalAmmo = Mathf.Clamp(totalAmmo, 0, maxAmmo);
     }
+
+   
     private void OnDrawGizmos()
     {
         Gizmos.DrawCube(colliderPosition.position, thisCollider);
