@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class AmmoBox : MonoBehaviour
 {
-    public int ammoBoxSize;
-    public enum ammoboxType{
+    public int ammoCount;
+    public enum AmmoboxType{
      STANDARD,
      AP
     }
-    public enum caliber
+    public enum Caliber
     {
         ACP45,
         GUAGE12,
         LAPUA338,
         SOVIET762
     }
+
+    public AmmoboxType ammoboxType;
 
     public class Pickable
     {
