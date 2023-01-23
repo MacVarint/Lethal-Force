@@ -31,6 +31,12 @@ public class AmmoScript : MonoBehaviour
     }
     public bool HasAmmo()
     {
+        //if (currentAmmo > 0)
+        //{
+        //    return true;
+        //}
+        //return false;
+        
         bool a = currentAmmo > 0 ? true : false; // conditie ? waarde als waar : waarde als niet waar (dit heet een itenary operator)
         return a;
     }
