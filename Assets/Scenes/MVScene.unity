@@ -1984,6 +1984,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5776344365375369889, guid: bb30255c173d8ed4a992c4fc2d1cd7af, type: 3}
+      propertyPath: ammoBoxSize
+      value: 56
+      objectReference: {fileID: 0}
     - target: {fileID: 8261707771882866670, guid: bb30255c173d8ed4a992c4fc2d1cd7af, type: 3}
       propertyPath: m_Layer
       value: 6
