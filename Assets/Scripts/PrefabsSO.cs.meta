@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 4f80f047e94fcf448a107fe7e175274a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pfResourcebar: {fileID: 2268769830772437112, guid: 454a269f3746d4f4bb028b342ccd078d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
