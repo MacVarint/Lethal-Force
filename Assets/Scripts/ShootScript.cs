@@ -43,6 +43,7 @@ public class ShootScript : MonoBehaviour
         em.enabled = true;
 
         GameObject bullet = Instantiate(bulletPrefab, gunRaycastSnapPoint.position, Quaternion.identity);
+        bullet.name = "Bullet";
         GameObject bulletCasing = Instantiate(bulletCasingPrefab, chamberExit.position, chamberExit.rotation, transform);
         bullet.transform.rotation = gunRaycastSnapPoint.rotation;
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxdictance)) {
