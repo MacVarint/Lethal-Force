@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: a51525f48ed4b9a4d91202b273eb9a99
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Crate02_004_Hull
+    100002: //RootNode
+    100004: Object001_Hull
+    100006: Object002_Hull
+    100008: Object003_Hull
+    100010: Object004_Hull
+    100012: Object005_Hull
+    100014: UCX_Crate02_3_01
+    100016: UCX_Crate02_3_02
+    100018: UCX_Crate02_3_03
+    100020: UCX_Crate02_3_04
+    100022: UCX_Crate02_3_05
+    100024: UCX_Crate02_3_06
+    400000: Crate02_004_Hull
+    400002: //RootNode
+    400004: Object001_Hull
+    400006: Object002_Hull
+    400008: Object003_Hull
+    400010: Object004_Hull
+    400012: Object005_Hull
+    400014: UCX_Crate02_3_01
+    400016: UCX_Crate02_3_02
+    400018: UCX_Crate02_3_03
+    400020: UCX_Crate02_3_04
+    400022: UCX_Crate02_3_05
+    400024: UCX_Crate02_3_06
+    2300000: Crate02_004_Hull
+    2300002: //RootNode
+    2300004: Object001_Hull
+    2300006: Object002_Hull
+    2300008: Object003_Hull
+    2300010: Object004_Hull
+    2300012: Object005_Hull
+    2300014: UCX_Crate02_3_01
+    2300016: UCX_Crate02_3_02
+    2300018: UCX_Crate02_3_03
+    2300020: UCX_Crate02_3_04
+    2300022: UCX_Crate02_3_05
+    2300024: UCX_Crate02_3_06
+    3300000: Crate02_004_Hull
+    3300002: //RootNode
+    3300004: Object001_Hull
+    3300006: Object002_Hull
+    3300008: Object003_Hull
+    3300010: Object004_Hull
+    3300012: Object005_Hull
+    3300014: UCX_Crate02_3_01
+    3300016: UCX_Crate02_3_02
+    3300018: UCX_Crate02_3_03
+    3300020: UCX_Crate02_3_04
+    3300022: UCX_Crate02_3_05
+    3300024: UCX_Crate02_3_06
+    4300000: Crate02_3
+    4300002: Object004_Hull
+    4300004: Object005_Hull
+    4300006: Crate02_004_Hull
+    4300008: Object002_Hull
+    4300010: Object003_Hull
+    4300012: Object001_Hull
+    4300014: UCX_Crate02_3_07
+    4300016: UCX_Crate02_3_01
+    4300018: UCX_Crate02_3_02
+    4300020: UCX_Crate02_3_03
+    4300022: UCX_Crate02_3_04
+    4300024: UCX_Crate02_3_05
+    4300026: UCX_Crate02_3_06
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Crate02A
+    second: {fileID: 2100000, guid: 7a3b3f14bc64d97428054caaa63adc68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Phy
+    second: {fileID: 2100000, guid: a709db3c367a71a4a82b01f448905e4e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -38,7 +38,7 @@ public class CameraScript : MonoBehaviour
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                //cam.transform.SetPositionAndRotation(targetViewPosition.position, targetOrientation.rotation);
+                cam.transform.SetPositionAndRotation(targetViewPosition.position, targetOrientation.rotation);
 
 
 

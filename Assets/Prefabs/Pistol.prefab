@@ -52,7 +52,7 @@ ParticleSystem:
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
-  autoRandomSeed: 0
+  autoRandomSeed: 1
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -109,14 +109,14 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -867073585
+  randomSeed: 0
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.09
+      scalar: 0.05
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5449,7 +5449,7 @@ Transform:
   m_GameObject: {fileID: 4727654778945939658}
   m_LocalRotation: {x: 0.8101951, y: 0, z: 0, w: 0.5861603}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4243, y: 1.4243, z: 1.4243}
+  m_LocalScale: {x: 1.4243, y: 1.4242996, z: 1.4242996}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4727654779805297886}
@@ -5519,6 +5519,11 @@ MonoBehaviour:
   currentAmmo: 7
   magazineSize: 7
   maxAmmo: 112
+  colliderPosition: {fileID: 0}
+  thisCollider: {x: 0.75, y: 1.5, z: 0.75}
+  isPickuppable:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &4727654779021957020
 GameObject:
   m_ObjectHideFlags: 0
