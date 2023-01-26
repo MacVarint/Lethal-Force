@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class AmmoScript : MonoBehaviour
@@ -11,6 +12,15 @@ public class AmmoScript : MonoBehaviour
     public Transform colliderPosition;
     public Vector3 thisCollider;
     public LayerMask isPickuppable;
+    public enum ActionState
+    {
+        Idle,
+        Shooting,
+        Reloading
+    }
+
+    public ActionState actionState = ActionState.Idle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +30,7 @@ public class AmmoScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && currentAmmo != magazineSize)
         {
-            Reload();
+           
         }
         Collider[] collisions = Physics.OverlapBox(colliderPosition.position, thisCollider, Quaternion.identity, isPickuppable);
         foreach(Collider c in collisions)
@@ -41,8 +51,11 @@ public class AmmoScript : MonoBehaviour
             currentAmmo--;
         }
     }
-    public void Reload()
+    public async Task Reload()
     {
+        actionState = ActionState.Reloading;
+
+        await Task.Delay(1000);
         if (totalAmmo >= magazineSize)
         {
             totalAmmo += currentAmmo;
@@ -62,6 +75,8 @@ public class AmmoScript : MonoBehaviour
         {   
             print(0);
         }
+
+        actionState = ActionState.Idle;
     }
 
     public void AddAmmo(int newAmmo)

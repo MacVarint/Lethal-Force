@@ -39,8 +39,8 @@ public class ShootScript : MonoBehaviour
         pistolAnimator.SetTrigger("Shoot");
 
         particleSystem1.Play();
-        ParticleSystem.EmissionModule em = particleSystem1.emission;
-        em.enabled = true;
+        ParticleSystem.EmissionModule muzzleFlashFX = particleSystem1.emission;
+        muzzleFlashFX.enabled = true;
 
         GameObject bullet = Instantiate(bulletPrefab, gunRaycastSnapPoint.position, Quaternion.identity);
         bullet.name = "Bullet";
@@ -54,7 +54,7 @@ public class ShootScript : MonoBehaviour
             Vector3 target = Camera.main.transform.position + Camera.main.transform.forward * maxdictance;
             bullet.transform.LookAt(target);
         }
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 100;
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 1000;
         ammoScript.DecreaseAmmo();
 
         bulletCasing.GetComponent<Rigidbody>().velocity = bulletCasing.transform.right * 1f+Vector3.up;
