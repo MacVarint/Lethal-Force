@@ -17,6 +17,7 @@ public class MovementScript : MonoBehaviour
     public float jumpFlag = 0;
     public Transform ori;
     private float horizontal;
+    [SerializeField] private float crouchMultiplier = 0.5f;
     [SerializeField] private float speed = 2.5f;
     [SerializeField] private float runMultiplier = 2;
     [SerializeField] private float maxSpeed = 0;
@@ -27,6 +28,15 @@ public class MovementScript : MonoBehaviour
     private bool run = false;
     [SerializeField] private float dragForce = 5;
     private float brakeSpeed;
+    public enum MovementActions
+    {
+        Idle,
+        Walking,
+        Running,
+        Crouching
+    }
+
+    public MovementActions movementAction = MovementActions.Idle;
 
     void Start()
     {
@@ -41,32 +51,72 @@ public class MovementScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) jumpFlag = (float)0.1 / Time.fixedDeltaTime;
-        run = Input.GetKey(KeyCode.LeftShift);
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.Space)) jumpFlag = (float)0.1 / Time.fixedDeltaTime;
+
+        if(vertical != 0 || horizontal != 0)
+        {
+            movementAction = MovementActions.Walking;
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                movementAction = MovementActions.Running;
+            }
+        }
+        else
+        {
+            movementAction = MovementActions.Idle;
+        }
+
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            movementAction = MovementActions.Crouching;
+        }
+
+
+        run = Input.GetKey(KeyCode.LeftShift);
+       
+
+
+        
     }
     void FixedUpdate()
     {
 
-
+       
         rb.AddForce(Vector3.down * gravity, ForceMode.Force);
-        Move(speed, maxSpeed, runMultiplier, run, isGrounded);
+        Move(speed, maxSpeed, isGrounded);
         Jump();
 
 
     }
 
-    private void Move(float speed, float maxSpeed, float runMultiplier, bool running, bool grounded, float baseSpeed = 10f)
+    private void Move(float speed, float maxSpeed, bool grounded, float baseSpeed = 10f)
     {
         direction = transform.forward * vertical + transform.right * horizontal;
+        float movementMultiplier = 1;
+
+        if (movementAction == MovementActions.Running)
+        {
+            movementMultiplier = runMultiplier;
+        }
+
+        if (movementAction == MovementActions.Crouching)
+        {
+            movementMultiplier = crouchMultiplier;
+        }
+
         if (!grounded)
         {
-            running = false;
             baseSpeed /= 2;
-            maxSpeed /= 2;
+            maxSpeed /= 4;
+            movementMultiplier = movementMultiplier > 1 ? 1 : movementMultiplier;
         }
-        if (!running) runMultiplier = 1;
+
+
+       
+        
 
 
 
@@ -82,7 +132,7 @@ public class MovementScript : MonoBehaviour
         }
         else
         {
-            rb.AddForce(baseSpeed * runMultiplier * speed * direction.normalized, ForceMode.Force);
+            rb.AddForce(baseSpeed * movementMultiplier * speed * direction.normalized, ForceMode.Force);
         }
 
     }

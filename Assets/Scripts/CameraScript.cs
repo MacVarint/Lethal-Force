@@ -29,6 +29,10 @@ public class CameraScript : MonoBehaviour
 
     }
 
+    public void LateUpdate()
+    {
+        Camera();
+    }
     public void Camera()
     {
         cam.fieldOfView = FOV;
@@ -38,7 +42,7 @@ public class CameraScript : MonoBehaviour
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                //cam.transform.SetPositionAndRotation(targetViewPosition.position, targetOrientation.rotation);
+                cam.transform.SetPositionAndRotation(targetViewPosition.position, targetOrientation.rotation);
 
 
 

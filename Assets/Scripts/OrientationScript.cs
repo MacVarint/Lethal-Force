@@ -5,9 +5,11 @@ using UnityEngine;
 public class OrientationScript : MonoBehaviour
 {
     [SerializeField] public Transform orientation;
-    [SerializeField] private float sensitivity = 100f;
+    [SerializeField] private float sensitivity = 1f;
     [SerializeField] public GameObject cam;
     [SerializeField] public CameraScript camScript;
+    [SerializeField] public Vector3 crouchOffSet;
+    public bool isCrouched;
 
     //[SerializeField] private Transform arm;
 
@@ -32,8 +34,8 @@ public class OrientationScript : MonoBehaviour
     {
 
 
-        float mouseX = Input.GetAxisRaw("Mouse X") * sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * sensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxisRaw("Mouse X") * sensitivity;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * sensitivity;
         mouseDelta = new Vector2(mouseX, mouseY);
 
         yRotation += mouseX;
@@ -43,10 +45,11 @@ public class OrientationScript : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, yRotation, 0);
         orientation.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        cam.transform.SetPositionAndRotation(transform.position, orientation.rotation);
-        camScript.Camera();
-        //arm.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        //arm.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+       
+   
 
     }
+
+
+
 }
