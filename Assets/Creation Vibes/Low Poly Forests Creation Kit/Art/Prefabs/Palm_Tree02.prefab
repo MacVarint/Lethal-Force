@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5541113654328270746}
   - component: {fileID: 6567488657772446489}
   - component: {fileID: -8702776254597355255}
+  - component: {fileID: -1352787647398046206}
   m_Layer: 0
   m_Name: Palm_Tree02
   m_TagString: Untagged
@@ -115,3 +116,30 @@ CapsuleCollider:
   m_Height: 12.641256
   m_Direction: 1
   m_Center: {x: 0.2, y: 6.2450247, z: 0.41}
+--- !u!205 &-1352787647398046206
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6333470592089603663}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -1.7112956, y: 6.2450247, z: -1.0279698}
+  m_Size: 24
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5541113654328270746}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5541113654328270746}
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5541113654328270746}
+  m_Enabled: 1
